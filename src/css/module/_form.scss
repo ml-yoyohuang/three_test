@@ -1,0 +1,47 @@
+// Initial
+@import "../initial";
+
+/* RESET */
+input,textarea,select{
+    border-width: 0;
+    border-radius: 2px;
+    padding-left: 10px;
+    @extend %chineseFont;
+    font-size: 1em;
+    color: inherit;
+    background-color: #fff;
+    &:focus{
+        outline: none;
+    }
+}
+
+button,input[type="submit"],input[type="reset"],a.style-btn{
+    font-family: 'Chinese' , sans-serif;
+    border: 0;
+    -webkit-appearance: none; /*Chrome*/
+    -moz-appearance: none; /*FF*/
+    appearance: none;/*CSS3*/
+    
+}
+select::-ms-expand {
+ /* IE 8 */
+ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+ /* IE 5-7 */
+ filter: alpha(opacity=0);
+ /* Good browsers :) */
+ opacity:0;
+}
+.form-block{
+    font-size: 15px;
+    display: flex;
+}
+.module-form-label{
+    color: $c-brown;
+    font-weight: bold;
+    line-height: 45px;
+    padding-right: 0.8em;
+    white-space: nowrap;
+}
+@import "form-input";
+@import "form-select";
+@import "form-radio";

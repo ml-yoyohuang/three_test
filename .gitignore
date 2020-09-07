@@ -1,0 +1,20 @@
+node_modules
+_doc
+doc
+.sass-cache
+dist
+# src/asset/img
+*.zip
+*.psd
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.sublime-project
+*.sublime-workspace
+*.sln
+*.settings
+*.cfg
+config.rb

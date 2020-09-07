@@ -1,0 +1,33 @@
+// Adorn Chinese Font -eng first, chn last
+%chineseFont {
+  font-family: 'Chinese','Noto Sans TC', "微軟正黑體", sans-serif;
+}
+
+//background-size
+@mixin backgroundSize($value) {
+  -moz-background-size: $value;
+  -webkit-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
+}
+
+//text-overflow
+@mixin textOverflow($value) {
+   @if $value == 1 {
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+   } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $value;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-box-orient: vertical;
+   }
+
+  }

@@ -1,0 +1,45 @@
+// Initial
+@import "../initial";
+button:focus {outline:0;}
+.btn,a.btn{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	background-color: $c-yellow;
+	color: $c-brown;
+	border-radius: 18px;
+	height: 35px;
+	min-width: 35px;
+	line-height: 35px;
+	text-align: center;
+	white-space: nowrap;
+	font-size: 18px;
+	font-weight: 900;
+	letter-spacing: 2px;
+	padding-left: 55px;
+	padding-right: 55px;
+	margin-left: 3px;
+	margin-right: 3px;
+	cursor: pointer;
+	&.style-half{
+		padding-left: 0;
+		padding-right: 2px;
+		text-align: center;
+		width: calc(50% - 3px - 0.3em);
+	}
+	&.style-darken{
+	color: white;
+	background-color: $c-brown;
+	}
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		border-radius: 18px;
+		border-bottom: 2px solid $c-brown;
+		top: 0;
+		bottom: 1px;
+		left: 1px;
+		right: 1px;
+	}
+}

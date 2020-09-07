@@ -1,0 +1,40 @@
+- var title = "title";
+- var description = "description";
+- var keywords = "";
+- var image = "";
+
+doctype html
+html
+  head
+    //- include _track.html
+    title=title
+    meta(charset='UTF-8')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no")
+    meta(name="description" content=description)
+    meta(name="keywords" content=keywords)
+    meta(property="og:title" content=title)
+    meta(property="og:site_name" content=title)
+    meta(property="og:description" content=description)
+    meta(property="og:type" content="website")
+    //- meta(property="fb:app_id" content=appId)
+    meta(property="og:image" content=image)
+    link(rel="shortcut icon" type="image/ico" href="/favicon.ico")
+    link(href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet")
+    script(src='//cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/three.js/100/three.js')
+    script(src="//cdn.rawgit.com/mrdoob/three.js/r87/examples/js/loaders/OBJLoader.js")
+    script(src="//cdn.rawgit.com/mrdoob/three.js/r87/examples/js/loaders/STLLoader.js")
+  body
+    //- include _track_body.html
+    #app(ref="app" @click="onclick")
+      .layout-container
+        header.header
+        .layout-view
+          .inner(ref="appinner")
+            block content
+        footer.footer
+
+  <!-- #{dateTime} -->

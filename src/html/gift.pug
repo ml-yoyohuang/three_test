@@ -1,0 +1,137 @@
+extends _master
+block content
+  - var list = [
+  -  {
+  -    prize: '3,500',
+  -    index: '1',
+  -    text: '精選好禮三選一',
+  -    item: [
+  -      {
+  -        index: '3-1',
+  -        name: '淨白四品組',
+  -        list1: [
+  -          '怡利斯爾淨白洗面乳 14g',
+  -          '怡利斯爾淨白柔膚水 18mL',
+  -          '怡利斯爾淨白柔膚乳 18mL',
+  -          '驅黑淨白露V 6g',
+  -        ],
+  -      },
+  -      {
+  -        index: '3-2',
+  -        name: '莉薇特麗三品組',
+  -        list1: [
+  -          '莉薇特麗全效化妝水 30mL',
+  -          '莉薇特麗全效乳液 30mL',
+  -          '莉薇特麗抗皺精露AA 20mL',
+  -        ],
+  -      },
+  -      {
+  -        index: '3-3',
+  -        name: '碧麗妃三品組',
+  -        list1: [
+  -          '碧麗妃溫℃美肌水 30mL',
+  -          '碧麗妃溫℃美肌乳 30mL',
+  -          '碧麗妃溫℃美肌霜 3g',
+  -        ],
+  -      },
+  -    ],
+  -  },
+  -  {
+  -    prize: '4,800',
+  -    index: '2',
+  -    text: '精選好禮三選一',
+  -    item: [
+  -      {
+  -        index: '3-4',
+  -        name: '全效抗痕三品組',
+  -        list1: [
+  -          '全效抗痕亮采賦活霜 25mL',
+  -          '全效抗痕亮采賦活乳 15mL',
+  -          '全效抗痕緊顏白金霜 7g',
+  -        ],
+  -      },
+  -      {
+  -        index: '3-5',
+  -        name: 'Spring 時尚子母背包',
+  -        list1: [
+  -          '嚴選優質PU皮革製成，觸感柔軟細緻，內層放置空間大，休閒或優雅風格都能輕鬆搭配',
+  -          '(大包/24x13x22cm 小包/21x5x13cm)',
+  -        ],
+  -      },
+  -      {
+  -        index: '3-6',
+  -        name: '碧麗妃五品組',
+  -        list1: [
+  -          '碧麗妃溫℃美肌水 30mL',
+  -          '碧麗妃溫℃美肌乳 30mL',
+  -          '碧麗妃溫℃美肌霜 3g',
+  -          '碧麗妃溫℃滋養修護片膜 乙片',
+  -          '碧麗妃極喚精靈高滲透修護水精華 7mL',
+  -        ],
+  -      },
+  -    ],
+  -  },
+  -  {
+  -    prize: '6,600',
+  -    index: '3',
+  -    text: '精選好禮二選一',
+  -    item: [
+  -      {
+  -        index: '3-7',
+  -        name: '全效抗痕五品組',
+  -        list1: [
+  -          '全效抗痕亮采賦活潔膚乳 30g',
+  -          '全效抗痕亮采賦活露 25mL',
+  -          '全效抗痕亮采賦活乳 15mL',
+  -          '全效抗痕緊顏白金霜 7g',
+  -          '莉薇特麗抗皺精露AA 20mL',
+  -        ],
+  -      },
+  -      {
+  -        index: '3-8',
+  -        name: '碧麗妃六品組',
+  -        list1: [
+  -          '碧麗妃溫℃美肌水 30mL',
+  -          '碧麗妃溫℃美肌乳 30mL',
+  -          '碧麗妃溫℃美肌霜 3g',
+  -          '碧麗妃溫℃滋養修護片膜 乙片',
+  -          '驅黑淨白露V 6g',
+  -          '碧麗妃極喚精靈高滲透修護水精華 7mL',
+  -        ],
+  -      },
+  -    ],
+  -  },
+  -  {
+  -    prize: '12,000',
+  -    index: '4',
+  -    text: '',
+  -    item: [
+  -      {
+  -        index: '3-9',
+  -        name: 'Chimei 直立式吸塵器',
+  -        list1: [
+  -          '不暫空間設計，收納快速又便利！直立手持兩用，搭配超強旋風集塵，高效過濾，讓居家清潔效率加倍',
+  -        ],
+  -      },
+  -    ],
+  -  },
+  -];
+  each g in list
+    .group-gift(data-length=g.item.length)
+      .ribbon
+        picture
+          source(srcset="asset/img/m-title-3-"+g.index+".png 2x", media='(max-width:1024px)')
+          img(src="~img/p-title-3-"+g.index+".png", alt="滿額NT$"+g.prize+g.text)
+      ul.ul-normal.list-item
+        each gitem in g.item
+          li.item.text-center
+            .col
+              img.item-img(src="~img/"+gitem.index+".png", alt="")
+            .col
+              .item-head
+                h3.item-title= gitem.name
+              .item-body.text-left
+                section
+                  each i in gitem.list1
+                    span= i
+                    br

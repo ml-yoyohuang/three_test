@@ -1,0 +1,73 @@
+// Initial
+@import "../initial";
+
+/* SELECT MODULE
+.select-wrap>(select>option)+::after
+*/
+
+// SKELETON
+$select-h: 45px;
+select{
+    height: $select-h;
+    line-height: $select-h;
+    width: 100%;
+    min-width: 4em;
+    font-size: 1em;
+    background: white;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 40px;
+    letter-spacing: 1px;
+    -webkit-appearance: none; /*Chrome*/
+    -moz-appearance: none; /*FF*/
+    appearance: none;/*CSS3*/
+    cursor: pointer;
+    &::-ms-expand {
+        display: none; /*IE*/
+    }
+    option{
+        max-width: 100%;
+        border: 0;
+        letter-spacing: 1px;
+    }
+}
+.select-wrap{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    &.style-autowidth{
+        width: auto;
+    }
+}
+//STYLE
+.select-wrap{ //set arrow icon on date & select
+    margin-bottom: 10px;
+    select{
+        border-radius: 10px;
+    }
+    &::after{
+        content: '';
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        top: 50%;
+        bottom: 0;
+        right: 0.7em;
+        margin-top: -5px;
+        /* V-shape arrow */
+        // width: 8px;
+        // height: 8px;
+        // border-right: 2px solid #999;
+        // border-bottom: 2px solid #999;
+        // transform: rotate(45deg);
+        
+        /* traingle arrow */
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 12px 12px 0 12px;
+        border-color: $c-brown transparent transparent transparent;
+    }
+}
+

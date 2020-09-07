@@ -1,0 +1,97 @@
+// Initial
+@import "initial";
+[v-cloak]{
+  opacity: 0;
+}
+body{
+  background-color: #FBF5ED;
+  overflow: hidden;
+}
+#app{
+  overflow: hidden;
+  &.is-active{
+    overflow: auto;
+  }
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.pull-right{
+  float: right;
+}
+article{
+  position: absolute;
+  top: 100%;
+  transition: top 0.5s ease 0.2s, opacity 0.5s ease 0.3s;
+  padding: 4em;
+  opacity: 0;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.8;
+  h1.is-active + &{
+    top: 144px;
+    opacity: 1;
+  }
+}
+h1 {
+  position: absolute;
+  // top: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 100vh;
+  text-align: center;
+  color: #0099aa;
+  font-size: 72px;
+  font-family: 'Arvo', serif;
+  transition: line-height 0.3s ease;
+  &.is-active{
+    line-height: 2em;
+    color: #fff;
+    .before, .after{
+      visibility: hidden;
+    }
+  }
+  a{
+    display: inline-block;
+    position: relative;
+    transition: color 0.2s ease;
+    margin-top: -0.5em;
+    line-height: 1;
+    cursor: pointer;
+    &:hover{
+      color: #fff;
+      .before, .after{
+        opacity: 1;
+      }
+      .before{
+        top: -3px;
+        left: 5px;
+      }
+      .after{
+        top: 3px;
+        left: -5px;
+      }
+    }
+    .before, .after{
+      position: absolute;
+      left: 0;
+      top: 0;
+      mix-blend-mode: screen;
+      opacity: 0;
+      white-space: nowrap;
+      // transition: top 0.2s ease, left 0.2s ease 0.1s;
+      pointer-events: none;
+    }
+    .before{
+      color: #f0f;
+    }
+    .after{
+      color: #0ff;
+    }
+  }
+}
